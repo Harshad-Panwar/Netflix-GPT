@@ -2,13 +2,19 @@ import React, { useRef, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { checkValidData } from "../utils/validate";
 import viewIcon from "../utils/view.png";
 import hideIcon from "../utils/hidden.png";
+import { useDispatch } from "react-redux";
+import {addUser} from "../redux/userSlice";
 
 const SignIn = ({ isSignUpForm }) => {
+
+  const dispatch = useDispatch();
+
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
@@ -42,6 +48,19 @@ const SignIn = ({ isSignUpForm }) => {
           const user = userCredential.user;
           // console.log(user);
           setErrorMessage("Account Created Successfully !");
+
+          updateProfile(user, {
+            displayName: nameValue,
+            photoURL: "https://cdn-icons-png.flaticon.com/512/3135/3135768.png",
+          })
+            .then(() => {
+              const {uid, email, displayName, photoURL} = auth.currentUser;
+
+              dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: photoURL}));
+            })
+            .catch((error) => {
+              setErrorMessage(error.message);
+            });
         })
         .catch((error) => {
           const errorCode = error.code;
