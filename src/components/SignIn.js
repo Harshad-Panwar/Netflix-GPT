@@ -10,6 +10,8 @@ import viewIcon from "../utils/view.png";
 import hideIcon from "../utils/hidden.png";
 import { useDispatch } from "react-redux";
 import {addUser} from "../redux/userSlice";
+import { Profile_LOGO } from "../utils/constants";
+
 
 const SignIn = ({ isSignUpForm }) => {
 
@@ -51,7 +53,7 @@ const SignIn = ({ isSignUpForm }) => {
 
           updateProfile(user, {
             displayName: nameValue,
-            photoURL: "https://cdn-icons-png.flaticon.com/512/3135/3135768.png",
+            photoURL: Profile_LOGO,
           })
             .then(() => {
               const {uid, email, displayName, photoURL} = auth.currentUser;
@@ -63,23 +65,15 @@ const SignIn = ({ isSignUpForm }) => {
             });
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // console.log(errorCode + "><" + errorMessage);
           setErrorMessage(error.message);
         });
     } else if (!isSignUpForm && isvalid === null) {
       signInWithEmailAndPassword(auth, emailValue, passwordValue)
         .then((userCredential) => {
           // Signed in
-          const user = userCredential.user;
-          // console.log(user);
           setErrorMessage("Logged In Successfully !");
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // console.log(errorCode + "><" + errorMessage);
           setErrorMessage("Please Enter Valid Credentials !");
         });
     }

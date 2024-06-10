@@ -43,7 +43,7 @@ const Header = ({ setSignUp }) => {
   }, []);
 
   return (
-    <div className=" bg-gradient-to-b from-black w-full absolute flex justify-around items-center pt-2 z-20">
+    <div className=" bg-gradient-to-b from-black w-full absolute flex justify-between px-10 items-center pt-2 z-20">
       <div>
         <h1 className="text-xl text-white absolute font-bold pt-9 px-[70px] opacity-90">
           GPT
@@ -67,8 +67,8 @@ const Header = ({ setSignUp }) => {
         </div>
       ) : (
         <div className="flex items-center gap-6">
-          <img className=" w-10" src={user.photoURL} alt="profile Photo"/>
           <h1 className="text-white font-bold text-sm">Welcome {user.displayName}</h1>
+          <img className=" w-10 rounded-md" src={user.photoURL} alt="profile Photo"/>
           <button
             className=" w-20 bg-[#FA0100] p-2 text-white text-sm font-bold rounded-lg"
             onClick={handleSignOut}
