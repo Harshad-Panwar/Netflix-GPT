@@ -1,23 +1,46 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../utils/Netflix_Logo_PMS.png";
 import { useSelector } from "react-redux";
-import { signOut } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {addUser, removeUser} from "../redux/userSlice";
 
 const Header = ({ setSignUp }) => {
   const user = useSelector((store) => store.user);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
-        navigate("/");
       })
       .catch((error) => {
         navigate("/error");
       });
   };
+
+  useEffect(()=>{
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed Up/In
+        const {uid, email, displayName, photoURL} = user;
+
+        dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: photoURL}));
+      //userData?.reloadUserInfo?.email
+    navigate("/browse");
+  
+  } else {
+    // User is signed out
+    dispatch(removeUser());
+    navigate("/");  
+  }
+        
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   return (
     <div className=" bg-gradient-to-b from-black w-full absolute flex justify-around items-center pt-2 z-20">

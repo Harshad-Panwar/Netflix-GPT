@@ -1,35 +1,10 @@
 import Header from "./Header";
 import SignIn from "./SignIn";
-import React, { useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../utils/firebase";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import {addUser, removeUser} from "../redux/userSlice";
+import React, { useState } from "react";
 
 const Login = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [isSignUpForm, setIsSignUpForm] = useState(false);
-
-  useEffect(()=>{
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // User is signed Up/In
-        const {uid, email, displayName, photoURL} = user;
-
-        dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: photoURL}));
-      //userData?.reloadUserInfo?.email
-    navigate("/browse");
   
-  } else {
-    // User is signed out
-    dispatch(removeUser());
-    navigate("/");  
-  }
-        
-    });
-  }, []);
+  const [isSignUpForm, setIsSignUpForm] = useState(false);
 
   return (
     <div>
