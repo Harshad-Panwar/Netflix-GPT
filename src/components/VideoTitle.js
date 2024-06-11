@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import playIcon from "../utils/play.png";
 import infoIcon from "../utils/info.png";
 
 const VideoTitle = ({ title, overview }) => {
   return (
-    <div className="absolute w-1/3  text-white top-72 py-6 px-14">
+    <div className="w-full h-screen absolute">
+      <div className="absolute w-1/3  text-white bottom-0 left-8 py-8 px-6 bg-black rounded-3xl bg-opacity-20">
       <h1 className="text-3xl font-bold pb-4">{title}</h1>
       <p className="text-sm font-semibold pb-4">{overview}</p>
       <div className=" flex font-bold">
@@ -23,6 +24,7 @@ const VideoTitle = ({ title, overview }) => {
           More Info
         </button>
       </div>
+    </div>
     </div>
   );
 };
