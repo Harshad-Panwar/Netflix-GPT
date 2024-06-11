@@ -42,8 +42,11 @@ const Header = ({ setSignUp }) => {
     return () => unsubscribe();
   }, []);
 
+  // const headerStyle = "bg-gradient-to-b from-black w-full absolute flex justify-between px-10 items-center pt-2 z-20";
+  // const headerStyleSticky = "bg-gradient-to-b from-black w-full absolute flex justify-between px-10 items-center pt-2 z-20 sticky top-0";
+  
   return (
-    <div className=" bg-gradient-to-b from-black w-full absolute flex justify-between px-10 items-center pt-2 z-20">
+    <div className="bg-gradient-to-b from-black w-full absolute flex justify-between px-10 items-center pt-2 z-20">
       <div>
         <h1 className="text-xl text-white absolute font-bold pt-9 px-[70px] opacity-90">
           GPT
