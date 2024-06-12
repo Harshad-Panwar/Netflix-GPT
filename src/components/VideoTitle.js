@@ -1,8 +1,20 @@
 import React from "react";
 import playIcon from "../utils/play.png";
 import infoIcon from "../utils/info.png";
+import { useNavigate } from "react-router-dom";
+import useSelectedTrailer from "../customHooks/useSelectedTrailer";
 
-const VideoTitle = ({ title, overview }) => {
+const VideoTitle = ({ title, overview, id }) => {
+
+  const selectTrailer = useSelectedTrailer();
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    selectTrailer(id);
+    navigate("/browse/trailer");
+    // console.log(movie);
+  };
+
   return (
     <div className="w-full h-screen absolute">
       <div className="absolute w-1/3  text-white bottom-0 left-8 py-8 px-6 bg-black rounded-3xl bg-opacity-20">
@@ -11,7 +23,7 @@ const VideoTitle = ({ title, overview }) => {
       <div className=" flex font-bold">
         <button
           className="bg-white text-black py-2 px-10 rounded-md mr-3 flex items-center hover:bg-opacity-80"
-          aria-label="Play Video"
+          aria-label="Play Video" onClick={handleClick}
         >
           <img className="w-6 mr-2" src={playIcon} alt="Play Icon" />
           Play

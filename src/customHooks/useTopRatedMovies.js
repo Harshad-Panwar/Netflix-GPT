@@ -8,7 +8,7 @@ const useTopRatedMovies = () => {
 
   const getTopRatedMovies = async () => {
     const data = await fetch(
-      "https://api.themoviedb.org/3/movie/top_rated?page=6",
+      "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=6",
       API_Options
     );
     const json = await data.json();

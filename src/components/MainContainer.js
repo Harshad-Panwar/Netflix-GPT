@@ -3,10 +3,8 @@ import VideoBackground from "./VideoBackground";
 import VideoTitle from "./VideoTitle";
 import { useSelector } from "react-redux";
 
-const MainContainer = () => {
+const MainContainer = ({randomNumber}) => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
-
-  const randomNumber = Math.floor(Math.random() * 20);
 
   if (!movies) return;
 
@@ -15,7 +13,7 @@ const MainContainer = () => {
   // console.log(randomMovie);
   return (
     <div>
-      <VideoTitle title={randomMovie.original_title} overview={randomMovie.overview} />
+      <VideoTitle title={randomMovie.original_title} overview={randomMovie.overview} id={randomMovie.id} />
       <VideoBackground id={randomMovie.id} />
     </div>
   );
