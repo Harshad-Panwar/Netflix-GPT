@@ -6,9 +6,11 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {addUser, removeUser} from "../redux/userSlice";
+import { setToggleMovieTrailer } from "../redux/movieSlice";
 
 const Header = ({ setSignUp }) => {
   const user = useSelector((store) => store.user);
+  const viewTrailer = useSelector(store => store.movies.toggleMovieTrailer);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -72,6 +74,12 @@ const Header = ({ setSignUp }) => {
         <div className="flex items-center gap-6">
           <h1 className="text-white font-bold text-sm">Welcome {user.displayName}</h1>
           <img className=" w-10 rounded-md" src={user.photoURL} alt="profile Photo"/>
+          {viewTrailer && <button
+            className=" w-20 bg-[#FA0100] p-2 text-white text-sm font-bold rounded-lg"
+            onClick={() => dispatch(setToggleMovieTrailer())}
+          >
+            Back
+          </button>}
           <button
             className=" w-20 bg-[#FA0100] p-2 text-white text-sm font-bold rounded-lg"
             onClick={handleSignOut}

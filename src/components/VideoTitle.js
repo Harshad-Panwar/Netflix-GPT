@@ -1,17 +1,18 @@
 import React from "react";
 import playIcon from "../utils/play.png";
 import infoIcon from "../utils/info.png";
-import { useNavigate } from "react-router-dom";
 import useSelectedTrailer from "../customHooks/useSelectedTrailer";
+import { useDispatch } from "react-redux";
+import { setToggleMovieTrailer } from "../redux/movieSlice";
 
 const VideoTitle = ({ title, overview, id }) => {
 
   const selectTrailer = useSelectedTrailer();
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleClick = () => {
     selectTrailer(id);
-    navigate("/browse/trailer");
+    dispatch(setToggleMovieTrailer());
     // console.log(movie);
   };
 

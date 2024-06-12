@@ -8,7 +8,7 @@ const MovieTrailer = () => {
     const trailerID = !trailer ? "" : trailer.key;
   
     return (
-      trailerID === "" ? <div><h1>Login First</h1></div> : <div className=" w-screen h-screen">
+      <div className=" w-screen h-screen">
         <iframe
           className=" w-screen h-screen"
           src={`https://www.youtube.com/embed/${trailerID}?showinfo=0`}

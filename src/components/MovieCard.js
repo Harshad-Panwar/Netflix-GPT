@@ -1,14 +1,15 @@
 import React from "react";
 import useSelectedTrailer from "../customHooks/useSelectedTrailer";
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setToggleMovieTrailer } from "../redux/movieSlice";
 
 const MovieCard = ({ movie }) => {
   const selectTrailer = useSelectedTrailer();
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleClick = () => {
     selectTrailer(movie.id);
-    navigate("/browse/trailer");
+    dispatch(setToggleMovieTrailer());
     // console.log(movie);
   };
 

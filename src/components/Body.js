@@ -2,8 +2,6 @@ import React from "react";
 import Login from "./Login";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Browse from "./Browse";
-import MovieTrailer from "./MovieTrailer";
-import ErrorPage from "./ErrorPage";
 
 const appRouter = createBrowserRouter([
   {
@@ -13,11 +11,6 @@ const appRouter = createBrowserRouter([
   {
     path: "/browse",
     element: <Browse />,
-  },
-  {
-    path: "/browse/trailer",
-    element: <MovieTrailer />,
-    errorElement: <ErrorPage />,
   }
 ]);
 
