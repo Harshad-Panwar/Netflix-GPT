@@ -11,11 +11,14 @@ import hideIcon from "../utils/hidden.png";
 import { useDispatch } from "react-redux";
 import {addUser} from "../redux/userSlice";
 import { Profile_LOGO } from "../utils/constants";
+import lang from "../utils/languageConstants";
+import { useSelector } from "react-redux";
 
 
 const SignIn = ({ isSignUpForm }) => {
 
   const dispatch = useDispatch();
+  const selectedlang = useSelector(store => store.appConfig.selectedLang);
 
   const name = useRef(null);
   const email = useRef(null);
@@ -82,7 +85,7 @@ const SignIn = ({ isSignUpForm }) => {
   return (
     <div className=" bg-black absolute w-1/3 left-1/3 top-28 text-white py-8 px-16 rounded-lg bg-opacity-75">
       <h1 className=" font-bold text-3xl pb-8">
-        {isSignUpForm ? "Sign Up" : "Sign In"}
+        {isSignUpForm ? lang[selectedlang].signUp : lang[selectedlang].signIn}
       </h1>
       <form onSubmit={(e) => e.preventDefault()}>
         {isSignUpForm && (
@@ -90,21 +93,21 @@ const SignIn = ({ isSignUpForm }) => {
             <input
               ref={name}
               className=" w-full px-3 py-4 rounded-sm bg-transparent border border-gray-500 my-3"
-              placeholder="Name"
+              placeholder={lang[selectedlang].name}
             />
           </div>
         )}
         <input
           ref={email}
           className=" w-full px-3 py-4 rounded-sm bg-transparent border border-gray-500 my-3"
-          placeholder="Email Address"
+          placeholder={lang[selectedlang].email}
         />
         <div className="flex items-center">
           <input
             ref={password}
             type={showPassword ? "text" : "password"}
             className=" w-full px-3 py-4 rounded-sm bg-transparent border border-gray-500 my-3"
-            placeholder="Password"
+            placeholder={lang[selectedlang].password}
           />
           <img
             className=" w-5 absolute right-20"
@@ -118,16 +121,16 @@ const SignIn = ({ isSignUpForm }) => {
             <input
               ref={confirmPassword}
               className=" w-full px-3 py-4 rounded-sm bg-transparent border border-gray-500 my-3"
-              placeholder="Confirm Password"
+              placeholder={lang[selectedlang].confirmPassword}
             />
           </div>
         )}
         <p className=" text-sm font-semibold text-[#b70000]">{errorMessage}</p>
         <button
-          className="w-full p-2 rounded-sm bg-[#FA0100] mt-8"
+          className="w-full p-2 rounded-sm bg-[#FA0100] mt-8 hover:bg-opacity-80"
           onClick={handleClick}
         >
-          {isSignUpForm ? "Sign Up" : "Sign In"}
+          {isSignUpForm ? lang[selectedlang].signUp : lang[selectedlang].signIn}
         </button>
       </form>
     </div>

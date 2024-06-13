@@ -1,34 +1,55 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import Header from "./Header";
-import useNowPlayingMovies from "../customHooks/useNowPlayingMovies";
+import PrimaryContainer from "./PrimaryContainer";
 import SecondaryContainer from "./SecondaryContainer";
+import Loading from "./Loading";
+import GptSearch from "./GptSearch";
+import MovieTrailer from "./MovieTrailer";
+import useNowPlayingMovies from "../customHooks/useNowPlayingMovies";
 import usePopularMovies from "../customHooks/usePopularMovies";
 import useTopRatedMovies from "../customHooks/useTopRatedMovies";
 import useUpcomingMovies from "../customHooks/useUpcomigMovies";
-import PrimaryContainer from "./PrimaryContainer";
-import { useSelector } from "react-redux";
-import MovieTrailer from "./MovieTrailer";
-import Loading from "./Loading";
 
 const Browse = () => {
+  // Fetch movie data using custom hooks
   useNowPlayingMovies();
   usePopularMovies();
   useTopRatedMovies();
   useUpcomingMovies();
 
-  const movies = useSelector(store => store.movies);
-  const viewTrailer = movies.toggleMovieTrailer;
+  // Select relevant data from Redux store
+  const movies = useSelector((store) => store.movies);
+  const isTrailerVisible = movies.toggleMovieTrailer;
+  const isGptVisible = useSelector((store) => store.gpt.showGptSearch);
+  const isLoading = !movies.nowPlayingMovies;
 
   return (
-    <div className=" overflow-hidden">
+    <div className="overflow-hidden bg-black">
       <Header />
-      {!movies.nowPlayingMovies ? <Loading /> : <>{
-        viewTrailer ? <MovieTrailer /> :
+      {/* Conditional rendering based on loading state */}
+      {isLoading ? (
+        <Loading />
+      ) : (
         <>
-        <PrimaryContainer />
-        <SecondaryContainer />
+          {/* Conditional rendering based on GPT search visibility */}
+          {isGptVisible ? (
+            <GptSearch />
+          ) : (
+            <>
+              {/* Conditional rendering based on trailer visibility */}
+              {isTrailerVisible ? (
+                <MovieTrailer />
+              ) : (
+                <>
+                  <PrimaryContainer />
+                  <SecondaryContainer />
+                </>
+              )}
+            </>
+          )}
         </>
-      }</>}
+      )}
     </div>
   );
 };

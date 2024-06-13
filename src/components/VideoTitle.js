@@ -1,21 +1,29 @@
 
 import React from "react";
 import playIcon from "../utils/play.png";
-import infoIcon from "../utils/info.png";
+import searchIcon from "../utils/search.png";
 import useSelectedTrailer from "../customHooks/useSelectedTrailer";
 import { useDispatch } from "react-redux";
 import { setToggleMovieTrailer } from "../redux/movieSlice";
+import { toggleShowGptSearch } from "../redux/gptSlice";
+import { useSelector } from "react-redux";
+import lang from "../utils/languageConstants";
 
 const VideoTitle = ({ title, overview, id }) => {
 
   const selectTrailer = useSelectedTrailer();
   const dispatch = useDispatch();
+  const selectedlang = useSelector(store => store.appConfig.selectedLang);
 
   const handleClick = () => {
     selectTrailer(id);
     dispatch(setToggleMovieTrailer());
     // console.log(movie);
   };
+
+  const handleShowGptSearch = () => {
+    dispatch(toggleShowGptSearch());
+  }
 
   // console.log("videoTile: " + id);
 
@@ -30,14 +38,14 @@ const VideoTitle = ({ title, overview, id }) => {
           aria-label="Play Video" onClick={handleClick}
         >
           <img className="w-6 mr-2" src={playIcon} alt="Play Icon" />
-          Play
+          {lang[selectedlang].play}
         </button>
         <button
           className="bg-[#4e4e4e] py-2 px-10 rounded-md flex items-center bg-opacity-70 hover:bg-opacity-50"
-          aria-label="More Information"
+          aria-label="More Information" onClick={handleShowGptSearch}
         >
-          <img className="w-6 mr-2" src={infoIcon} alt="Info Icon" />
-          More Info
+          <img className="w-6 mr-2" src={searchIcon} alt="Info Icon" />
+          {lang[selectedlang].gptSearch}
         </button>
       </div>
     </div>

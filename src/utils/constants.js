@@ -9,3 +9,18 @@ export const API_Options = {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2M2Y3MTg1MTg2NDljMmEwNTFmNDVhY2Q1YzNiMjkyYiIsInN1YiI6IjY2NjczZmMzZDk4NDE0Yzg5ZDg1YTJkMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Xd2zrjyGQA7UbfV-oiyrU_bUOmH_ooS_jKZxCnv5M_I'
     }
   };
+
+  export const Supported_Languages = [
+    {identifier : "en", language: "English" },
+    {identifier : "hi", language: "Hindi" },
+    {identifier : "es", language: "Spanish" },
+    {identifier : "ja", language: "Japanese" },
+    {identifier : "fr", language: "French" },
+    {identifier : "de", language: "German" },
+    {identifier : "it", language: "Italian" },
+    {identifier : "pt", language: "Portuguese" },
+    {identifier : "ru", language: "Russian" },
+    {identifier : "zhCN", language: "Chinese" },
+    {identifier : "ko", language: "Korean" },
+    {identifier : "ar", language: "Arabic" },
+  ];
