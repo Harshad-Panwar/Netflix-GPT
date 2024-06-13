@@ -74,7 +74,7 @@ const SignIn = ({ isSignUpForm }) => {
           setErrorMessage("Logged In Successfully !");
         })
         .catch((error) => {
-          setErrorMessage("Please Enter Valid Credentials !");
+          setErrorMessage(error.message);
         });
     }
   };

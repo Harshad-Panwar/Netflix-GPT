@@ -7,13 +7,17 @@ const useTopRatedMovies = () => {
   const dispatch = useDispatch();
 
   const getTopRatedMovies = async () => {
-    const data = await fetch(
-      "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=6",
-      API_Options
-    );
-    const json = await data.json();
-    dispatch(addTopRatedMovies(json.results));
-    // console.log(json.results);
+    try {
+      const data = await fetch(
+        "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=6",
+        API_Options
+      );
+      const json = await data.json();
+      dispatch(addTopRatedMovies(json.results));
+      // console.log(json.results);
+    } catch (error) {
+      console.log("getTopRatedMovies : " + error);
+    }
   };
 
   useEffect(() => {

@@ -8,6 +8,7 @@ import useUpcomingMovies from "../customHooks/useUpcomigMovies";
 import PrimaryContainer from "./PrimaryContainer";
 import { useSelector } from "react-redux";
 import MovieTrailer from "./MovieTrailer";
+import Loading from "./Loading";
 
 const Browse = () => {
   useNowPlayingMovies();
@@ -15,18 +16,19 @@ const Browse = () => {
   useTopRatedMovies();
   useUpcomingMovies();
 
-  const viewTrailer = useSelector(store => store.movies.toggleMovieTrailer);
+  const movies = useSelector(store => store.movies);
+  const viewTrailer = movies.toggleMovieTrailer;
 
   return (
     <div className=" overflow-hidden">
       <Header />
-      {
+      {!movies.useNowPlayingMovies ? <Loading /> : <>{
         viewTrailer ? <MovieTrailer /> :
         <>
         <PrimaryContainer />
         <SecondaryContainer />
         </>
-      }
+      }</>}
     </div>
   );
 };

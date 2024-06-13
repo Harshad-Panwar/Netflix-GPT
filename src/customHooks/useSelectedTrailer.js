@@ -21,7 +21,7 @@ const useSelectedTrailer = () => {
 
       dispatch(addSelectedMovie(trailer));
     } catch (error) {
-      console.error("Error fetching trailer:", error);
+      console.error("useSelectedTrailer Error fetching trailer:", error);
     }
   }, [dispatch]);
 
