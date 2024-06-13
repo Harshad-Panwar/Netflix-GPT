@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useSelector } from "react-redux";
 import useMovieTrailer from "../customHooks/useMovieTrailer";
@@ -8,6 +9,8 @@ const VideoBackground = ({ id }) => {
   const trailer = useSelector((store) => store.movies.movieTrailer);
 
   const trailerID = !trailer ? "" : trailer.key;
+
+  // console.log("Videobg : " + id)
 
   return (
     <div className=" w-screen h-screen">

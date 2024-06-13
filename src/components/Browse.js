@@ -22,7 +22,7 @@ const Browse = () => {
   return (
     <div className=" overflow-hidden">
       <Header />
-      {!movies.useNowPlayingMovies ? <Loading /> : <>{
+      {!movies.nowPlayingMovies ? <Loading /> : <>{
         viewTrailer ? <MovieTrailer /> :
         <>
         <PrimaryContainer />

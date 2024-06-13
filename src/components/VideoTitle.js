@@ -1,3 +1,4 @@
+
 import React from "react";
 import playIcon from "../utils/play.png";
 import infoIcon from "../utils/info.png";
@@ -15,6 +16,8 @@ const VideoTitle = ({ title, overview, id }) => {
     dispatch(setToggleMovieTrailer());
     // console.log(movie);
   };
+
+  // console.log("videoTile: " + id);
 
   return (
     <div className="w-full h-screen absolute">

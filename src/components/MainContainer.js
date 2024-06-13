@@ -3,12 +3,16 @@ import VideoBackground from "./VideoBackground";
 import VideoTitle from "./VideoTitle";
 import { useSelector } from "react-redux";
 
-const MainContainer = ({randomNumber}) => {
-  const movies = useSelector((store) => store.movies?.nowPlayingMovies);
+const MainContainer = () => {
+  const movies = useSelector((store) => store.movies);
 
-  if (!movies) return;
+  if (!movies.nowPlayingMovies || !movies.nowPlayingMovies.length) return null;
 
-  const randomMovie = movies[randomNumber];
+  const randomNumber = movies.randomNumber;
+
+  const randomMovie = movies.nowPlayingMovies[randomNumber];
+
+  if (!randomMovie) return null;
 
   // console.log(randomMovie);
   return (

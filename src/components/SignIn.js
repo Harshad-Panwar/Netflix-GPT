@@ -109,6 +109,7 @@ const SignIn = ({ isSignUpForm }) => {
           <img
             className=" w-5 absolute right-20"
             src={showPassword ? viewIcon : hideIcon}
+            alt="icon"
             onClick={() => setShowPassword(!showPassword)}
           />
         </div>
