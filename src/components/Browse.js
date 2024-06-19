@@ -27,19 +27,19 @@ const Browse = () => {
   return (
     <div className="overflow-hidden bg-black">
       <Header />
-      {/* Conditional rendering based on loading state */}
-      {isLoading ? (
-        <Loading />
+      {/* Conditional rendering based on trailer visibility */}
+      {isTrailerVisible ? (
+        <MovieTrailer />
       ) : (
         <>
-          {/* Conditional rendering based on GPT search visibility */}
-          {isGptVisible ? (
-            <GptSearch />
+          {/* Conditional rendering based on loading state */}
+          {isLoading ? (
+            <Loading />
           ) : (
             <>
-              {/* Conditional rendering based on trailer visibility */}
-              {isTrailerVisible ? (
-                <MovieTrailer />
+              {/* Conditional rendering based on GPT search visibility */}
+              {isGptVisible ? (
+                <GptSearch />
               ) : (
                 <>
                   <PrimaryContainer />
