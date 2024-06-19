@@ -1,3 +1,26 @@
+# App Preview
+
+![Screenshot 2024-06-19 125021](https://github.com/Harshad-Panwar/Netflix-GPT/assets/92791126/592a74cc-7bf9-4251-9988-cbd70a9cf5ad)
+
+![Screenshot 2024-06-19 125043](https://github.com/Harshad-Panwar/Netflix-GPT/assets/92791126/0cc91c43-0178-41a5-8fc0-d7dcaf09c90d)
+
+![Screenshot 2024-06-19 125105](https://github.com/Harshad-Panwar/Netflix-GPT/assets/92791126/b6ee1170-a8a3-432b-aa29-ae52f88a40c5)
+
+![Screenshot 2024-06-19 125118](https://github.com/Harshad-Panwar/Netflix-GPT/assets/92791126/24eb66f0-6880-480d-93ed-71967461fdbd)
+
+![Screenshot 2024-06-19 125222](https://github.com/Harshad-Panwar/Netflix-GPT/assets/92791126/0351b047-0d4e-4bfe-94b3-170d4b6dc9a9)
+
+![Screenshot 2024-06-19 125241](https://github.com/Harshad-Panwar/Netflix-GPT/assets/92791126/0232aaca-66ac-4e53-9584-f850d4a331fc)
+
+![Screenshot 2024-06-19 125303](https://github.com/Harshad-Panwar/Netflix-GPT/assets/92791126/74c1ade4-f10c-433a-b7dc-3614fd1648db)
+
+![Screenshot 2024-06-19 125322](https://github.com/Harshad-Panwar/Netflix-GPT/assets/92791126/9080739e-3956-49f5-8081-c39fc4541744)
+
+![Screenshot 2024-06-19 125341](https://github.com/Harshad-Panwar/Netflix-GPT/assets/92791126/95e6fcc7-0066-4d9c-9460-979cf6d5b41d)
+
+![Screenshot 2024-06-19 125411](https://github.com/Harshad-Panwar/Netflix-GPT/assets/92791126/fab952e4-dce3-4bd1-8c33-36345eda0229)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
