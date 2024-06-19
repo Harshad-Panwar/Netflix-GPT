@@ -1,4 +1,5 @@
 # Netflixx-GPT: Your Personalized Movie Experience
+  * Check Out: https://netflixx-gpt-nu.vercel.app/
 
 # Description
 
@@ -25,30 +26,37 @@ Netflixx-GPT is a cutting-edge React web application designed to give you the ul
   6) Personalized GPT Search:
      * Utilize the GPT-powered search feature to get personalized movie recommendations based on your preferences and viewing history.
 
-  7) Tailwind CSS Styling:
+  7) State Management with Redux:
+       * Redux manages the application's state, ensuring a seamless and efficient data flow throughout the app.
+       * This includes handling user authentication states, movie data fetching, and user preferences, making the app robust and scalable.
+
+  8) Tailwind CSS Styling:
      * The app is styled using Tailwind CSS, offering a modern, responsive, and visually appealing design.
 
-  8) Multilingual Support:
+  9) Multilingual Support:
      * Netflixx-GPT includes multilingual features, allowing users to browse the app in their preferred language for a more personalized experience.
 
 # User Journey:
   1) Sign In/Sign Up:
-    New users can easily sign up, while returning users can sign in with their credentials. The Firebase-backed authentication ensures a smooth and secure login process.
+     * New users can easily sign up while returning users can sign in with credentials. The Firebase-backed authentication ensures a smooth and secure login process.
 
   2) Browse Movies:
-    After logging in, users are greeted with a homepage displaying movie lists categorized by genres, trends, and user preferences.
+     * After logging in, users are greeted with a homepage displaying movie lists categorized by genres, trends, and user preferences.
 
   3) Watch Trailers:
-    Clicking on any movie card allows users to watch its trailer, helping them decide if it’s worth their time.
+     * Clicking on any movie card allows users to watch its trailer, helping them decide if it’s worth their time.
 
   4) Get Recommendations:
-    For personalized movie suggestions, users can engage with the ChatGPT feature by simply asking for recommendations based on their tastes.
+     * Users can use the ChatGPT feature to make personalised movie suggestions by asking for recommendations based on their tastes.
 
-  5) Multilingual Experience:
-    Users can switch the app's language to their preference, making it accessible to a global audience.
+  5) Manage State with Redux:
+     * Redux handles the state of user sessions, movie data, and more, providing a consistent and reliable user experience.
+  
+  6) Multilingual Experience:
+     * Users can switch the app's language to their preference, making it accessible to a global audience.
 
 
-Netflixx-GPT aims to provide a seamless and engaging movie browsing experience by merging the best of streaming UI with advanced AI-driven recommendations. Whether you're looking for your next movie night pick or just browsing, Netflixx-GPT ensures you'll always find something worth watching.
+Netflixx-GPT aims to provide a seamless and engaging movie browsing experience by merging the best streaming UI with advanced AI-driven recommendations. Whether looking for your next movie night pick or browsing, Netflixx-GPT ensures you'll always find something worth watching.
 
 # App Preview
 
