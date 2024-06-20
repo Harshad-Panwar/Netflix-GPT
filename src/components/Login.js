@@ -9,14 +9,14 @@ const Login = () => {
 
   return (
     <div>
-      <div className=" absolute bg-black opacity-50 w-full h-screen"></div>
-      <Header setSignUp={setIsSignUpForm} />
-      <SignIn isSignUpForm={isSignUpForm} />
       <img
-        className=" w-full h-screen"
+        className=" fixed object-cover w-full h-screen"
         src={Login_BG}
         alt="bg-img"
       />
+      <div className=" absolute bg-black opacity-50 w-full h-screen"></div>
+      <Header setSignUp={setIsSignUpForm} />
+      <SignIn isSignUpForm={isSignUpForm} />
     </div>
   );
 };

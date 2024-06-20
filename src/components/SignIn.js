@@ -83,8 +83,9 @@ const SignIn = ({ isSignUpForm }) => {
   };
 
   return (
-    <div className=" bg-black absolute w-1/3 left-1/3 top-28 text-white py-8 px-16 rounded-lg bg-opacity-75">
-      <h1 className=" font-bold text-3xl pb-8">
+    <div className="flex items-center justify-center h-screen">
+      <div className=" bg-black absolute w-1/3 sm:w-3/4 text-white py-8 px-16 sm:px-6 rounded-lg bg-opacity-75">
+      <h1 className=" font-bold text-3xl sm:text-center sm:text-2xl pb-8">
         {isSignUpForm ? lang[selectedlang].signUp : lang[selectedlang].signIn}
       </h1>
       <form onSubmit={(e) => e.preventDefault()}>
@@ -110,7 +111,7 @@ const SignIn = ({ isSignUpForm }) => {
             placeholder={lang[selectedlang].password}
           />
           <img
-            className=" w-5 absolute right-20"
+            className=" w-5 absolute right-20 sm:right-8"
             src={showPassword ? viewIcon : hideIcon}
             alt="icon"
             onClick={() => setShowPassword(!showPassword)}
@@ -133,6 +134,7 @@ const SignIn = ({ isSignUpForm }) => {
           {isSignUpForm ? lang[selectedlang].signUp : lang[selectedlang].signIn}
         </button>
       </form>
+    </div>
     </div>
   );
 };

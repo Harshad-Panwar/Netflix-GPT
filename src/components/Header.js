@@ -65,42 +65,42 @@ const Header = ({ setSignUp }) => {
   // const headerStyleSticky = "bg-gradient-to-b from-black w-full absolute flex justify-between px-10 items-center pt-2 z-20 sticky top-0";
 
   return (
-    <div className="bg-gradient-to-b from-black w-full absolute flex justify-between px-10 items-center pt-2 z-20">
+    <div className="bg-gradient-to-b from-black w-full absolute flex justify-between px-10 sm:px-2 items-center pt-2 z-20">
       <div>
-        <h1 className="text-xl text-white absolute font-bold pt-9 px-[70px] opacity-90">
+        <h1 className="text-xl text-white absolute font-bold pt-9 px-[70px] opacity-90 sm:hidden">
           GPT
         </h1>
-        <img className=" w-44" src={logo} alt="logo" />
+        <img className=" w-44 sm:w-28" src={logo} alt="logo" />
       </div>
-      <div className=" flex gap-6 ">
+      <div className=" flex gap-6 sm:gap-3">
       {user === null ? (
-        <div className="flex gap-6">
+        <div className="flex gap-6 sm:gap-3">
           <button
-            className=" w-20 bg-[#FA0100] p-2 text-white text-sm font-bold rounded-lg hover:bg-opacity-80"
+            className=" w-20 sm:w-16 sm:text-xs bg-[#FA0100] p-2 text-white text-sm font-bold rounded-lg hover:bg-opacity-80 "
             onClick={() => setSignUp(false)}
           >
             {lang[selectedlang].signIn}
           </button>
           <button
-            className=" w-20 bg-[#FA0100] p-2 text-white text-sm font-bold rounded-lg hover:bg-opacity-80"
+            className=" w-20 sm:w-16 sm:text-xs bg-[#FA0100] p-2 text-white text-sm font-bold rounded-lg hover:bg-opacity-80"
             onClick={() => setSignUp(true)}
           >
             {lang[selectedlang].signUp}
           </button>
         </div>
       ) : (
-        <div className="flex items-center gap-6">
-          <h1 className="text-white font-bold text-sm">
+        <div className="flex items-center gap-6 sm:gap-3">
+          <h1 className="text-white font-bold text-sm sm:hidden">
           {lang[selectedlang].headerWelcome} {user.displayName}
           </h1>
           <img
-            className=" w-10 rounded-md"
+            className=" w-10 sm:hidden rounded-md"
             src={user.photoURL}
             alt="profile Photo"
           />
           {(viewTrailer || showGpt) && (
             <button
-              className=" w-20 bg-[#FA0100] p-2 text-white text-sm font-bold rounded-lg hover:bg-opacity-80"
+              className=" w-20 sm:w-16 sm:text-[10px] sm:p-1 bg-[#FA0100] p-2 text-white text-sm font-bold rounded-lg hover:bg-opacity-80"
               onClick={() => {
                 if (viewTrailer) {
                   dispatch(setToggleMovieTrailer());
@@ -113,14 +113,14 @@ const Header = ({ setSignUp }) => {
             </button>
           )}
           <button
-            className=" w-20 bg-[#FA0100] p-2 text-white text-sm font-bold rounded-lg hover:bg-opacity-80"
+            className=" w-20 sm:w-16 sm:text-[10px] sm:p-1 bg-[#FA0100] p-2 text-white text-sm font-bold rounded-lg hover:bg-opacity-80"
             onClick={handleSignOut}
           >
             {lang[selectedlang].signOut}
           </button>
         </div>
       )}
-        <select className=" w-24 bg-black p-2 bg-opacity-50 text-white text-sm font-bold rounded-lg" onChange={handleSelectLang}>
+        <select className=" w-24 sm:w-16 sm:text-[10px] sm:p-1 bg-black p-2 bg-opacity-50 text-white text-sm font-bold rounded-lg" onChange={handleSelectLang}>
             {Supported_Languages.map(lang => <option key={lang.identifier} value={lang.identifier} >{lang.language}</option>)}
         </select>
       </div>

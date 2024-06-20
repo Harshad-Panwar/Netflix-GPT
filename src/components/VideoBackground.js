@@ -13,9 +13,9 @@ const VideoBackground = ({ id }) => {
   // console.log("Videobg : " + id)
 
   return (
-    <div className=" w-screen h-screen">
+    <div className=" w-screen -mt-32 -mb-20 sm:-mt-6 sm:-mb-0">
       <iframe
-        className=" w-[160vw] h-[130vh] z-10 -mt-32 ml-[-28rem] pointer-events-none overflow-hidden"
+        className="w-screen aspect-video pointer-events-none"
         src={`https://www.youtube.com/embed/${trailerID}?autoplay=1&mute=1&controls=0&showinfo=0&loop=1&playlist=${trailerID}`}
         title="YouTube video player"
         referrerPolicy="strict-origin-when-cross-origin"

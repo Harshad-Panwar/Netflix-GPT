@@ -14,7 +14,7 @@ const MovieCard = ({ movie }) => {
   };
 
   return (
-    <div className="w-44" onClick={handleClick}>
+    <div className="w-44 sm:w-32" onClick={handleClick}>
       <img
         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
         alt="Movie Poster"

@@ -5,14 +5,16 @@ const MoviesList = ({ title, data }) => {
   // console.log(data);
   return (
     data && (
-      <div className="pl-14 pb-12 ">
-        <h1 className="pb-4 text-white text-xl font-semibold">{title}</h1>
+      <div className="px-14 pb-8 sm:px-2 sm:pb-4 ">
+        <h1 className="text-white sm:text-sm text-xl font-semibold sm:pb-2 pb-4">{title}</h1>
+        <div className="flex justify-center w-full">
         <div className="flex  overflow-x-scroll">
-        <div className="flex gap-4">
+        <div className="flex gap-4 sm:gap-2">
         {data.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
         </div>
+      </div>
       </div>
       </div>
     )

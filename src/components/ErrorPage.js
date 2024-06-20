@@ -6,7 +6,7 @@ const ErrorPage = () => {
 // console.log(err);
 
     return(
-        <div className="errorPage">
+        <div className="flex justify-center items-center">
             <div>
             <h1>{err.status} {err.statusText}</h1>
             <hr />

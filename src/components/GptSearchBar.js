@@ -37,7 +37,7 @@ const GptSearchBar = () => {
 
       //const gptresult = chatCompletion?.choices?.[0]?.message?.content;
 
-      const gptresult = "Bad Boys: Ride or Die,Boy Kills World,Jab We Met,Bareilly Ki Barfi,Humpty Sharma Ki Dulhania,Yeh Jawaani Hai Deewani,barfi,rockstar,raees".split(",");
+      const gptresult = "Bad Boys: Ride or Die,Boy Kills World,Jab We Met,Bareilly Ki Barfi,rockstar".split(",");
 
       const promiseArray = gptresult.map((movie) => getResultTMDBMovies(movie));
       
@@ -50,20 +50,20 @@ const GptSearchBar = () => {
 
   return (
       <div className=" w-full ">
-        <h1 className=" text-white font-bold text-center pb-4 text-4xl">
+        <h1 className=" text-white font-bold text-center pb-4 text-4xl sm:text-lg">
           {lang[selectedlang].gptSearchHeadind01}
         </h1>
-        <h2 className=" text-white font-semibold text-center pb-6 text-lg">
+        <h2 className=" text-white font-semibold text-center pb-6 text-lg sm:hidden">
           {lang[selectedlang].gptSearchHeadind02}
         </h2>
-        <div className="w-full flex justify-center items-center gap-5">
+        <div className="w-full flex justify-center items-center gap-5 sm:gap-3">
           <input 
           ref={searchText}
-            className=" w-1/3 px-3 py-4 rounded-lg bg-white bg-opacity-80 my-3 placeholder-black"
+            className=" w-1/3 sm:w-2/3 px-3 py-4 rounded-lg bg-white bg-opacity-80 my-3 placeholder-black sm:placeholder:text-xs"
             placeholder={lang[selectedlang].gptSearchBarPlaceHolder}
           />
           <button
-            className="w-32 bg-[#FA0100] py-4 text-white text-sm font-bold rounded-lg flex items-center justify-center hover:bg-opacity-80"
+            className="w-32 sm:w-28 bg-[#FA0100] py-4 text-white text-sm font-bold rounded-lg flex items-center justify-center hover:bg-opacity-80"
             onClick={handleGptSearch}
           >
             <img className="w-6 mr-2" src={searchIcon} alt="Info Icon" />
