@@ -37,7 +37,7 @@ const GptSearchBar = () => {
 
       //const gptresult = chatCompletion?.choices?.[0]?.message?.content;
 
-      const gptresult = "Bad Boys: Ride or Die,Boy Kills World,Jab We Met,Bareilly Ki Barfi,rockstar".split(",");
+      const gptresult = "Bad Boys: Ride or Die,Boy Kills World,Fast X,Captain Marvel,Iron Man 2".split(",");
 
       const promiseArray = gptresult.map((movie) => getResultTMDBMovies(movie));
       
