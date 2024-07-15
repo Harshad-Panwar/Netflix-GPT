@@ -1,4 +1,5 @@
 import { Login_BG } from "../utils/constants";
+import Footer from "./Footer";
 import Header from "./Header";
 import SignIn from "./SignIn";
 import React, { useState } from "react";
@@ -17,6 +18,7 @@ const Login = () => {
       <div className=" absolute bg-black opacity-50 w-full h-screen"></div>
       <Header setSignUp={setIsSignUpForm} />
       <SignIn isSignUpForm={isSignUpForm} />
+      <Footer />
     </div>
   );
 };

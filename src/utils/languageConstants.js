@@ -21,6 +21,7 @@ const lang = {
         gptSearchHeadind02 : "Empower your movie choices with GPT's AI-driven recommendations Now.",
         search : "Search",
         gptSearchBarPlaceHolder : "What whould you like to watch today ?",
+        note: "Note : The content or material being viewed is intended strictly for educational purposes."
     },
     hi : {
         headerWelcome : "स्वागत",
@@ -44,6 +45,7 @@ const lang = {
         gptSearchHeadind02 : "अभी GPT की AI-संचालित अनुशंसाओं के साथ अपनी मूवी पसंद को सशक्त बनाएं।",
         search : "खोजे",
         gptSearchBarPlaceHolder : "आज आप क्या देखना पसंद करेंगे?",
+        note: "ध्यान दें: देखी जा रही सामग्री या सामग्री पूरी तरह से शैक्षिक उद्देश्यों के लिए है।"
     },
     ja : {
         headerWelcome : "いらっしゃいませ",
@@ -67,6 +69,7 @@ const lang = {
         gptSearchHeadind02 : "GPT の AI 主導のレコメンデーションで映画の選択を強化しましょう。",
         search : "検索",
         gptSearchBarPlaceHolder : "今日は何を見たいですか?",
+        note: "注 : 表示されているコンテンツまたは資料は、教育目的のみを目的としています。"
     },
     es : {
         headerWelcome : "bienvenido",
@@ -90,6 +93,7 @@ const lang = {
         gptSearchHeadind02 : "Mejore sus opciones de películas con las recomendaciones basadas en IA de GPT ahora.",
         search : "Buscar",
         gptSearchBarPlaceHolder : "¿Qué te gustaría ver hoy?",
+        note: "Nota: El contenido o material que se está viendo está destinado estrictamente a fines educativos."
     },
     fr : {
         headerWelcome: "Bienvenue",
@@ -113,6 +117,7 @@ const lang = {
         gptSearchHeadind02: "Améliorez vos choix de films avec les recommandations basées sur l'IA de GPT maintenant.",
         search: "Recherche",
         gptSearchBarPlaceHolder: "Que voulez-vous regarder aujourd'hui?",
+        note: "Remarque : Le contenu ou le matériel consulté est strictement destiné à des fins éducatives."
     },
     de : {
         headerWelcome: "Willkommen",
@@ -136,6 +141,7 @@ const lang = {
         gptSearchHeadind02: "Optimieren Sie Ihre Filmwahl jetzt mit GPTs KI-gesteuerten Empfehlungen.",
         search: "Suche",
         gptSearchBarPlaceHolder: "Was möchten Sie heute ansehen?",
+        note: "Opmerking: de inhoud of het materiaal dat wordt bekeken, is uitsluitend bedoeld voor educatieve doeleinden."
     },
     it : {
         headerWelcome: "Benvenuto",
@@ -159,6 +165,7 @@ const lang = {
         gptSearchHeadind02: "Potenzia le tue scelte cinematografiche con i consigli basati su IA di GPT ora.",
         search: "Ricerca",
         gptSearchBarPlaceHolder: "Cosa ti piacerebbe guardare oggi?",
+        note: "Nota: il contenuto o il materiale visualizzato è destinato esclusivamente a scopi didattici."
     },
     pt : {
         headerWelcome: "Bem-vindo",
@@ -182,6 +189,7 @@ const lang = {
         gptSearchHeadind02: "Aprimore suas escolhas de filmes com as recomendações baseadas em IA do GPT agora.",
         search: "Pesquisa",
         gptSearchBarPlaceHolder: "O que você gostaria de assistir hoje?",
+        note: "Nota: O conteúdo ou material visualizado destina-se estritamente a fins educacionais."
     },
     ru : {
         headerWelcome: "Добро пожаловать",
@@ -205,6 +213,7 @@ const lang = {
         gptSearchHeadind02: "Усилите ваш выбор фильмов с помощью рекомендаций на базе ИИ от GPT прямо сейчас.",
         search: "Поиск",
         gptSearchBarPlaceHolder: "Что вы хотели бы посмотреть сегодня?",
+        note: "Примечание. Просматриваемый контент или материалы предназначены исключительно для образовательных целей."
     },
     zhCN : {
         headerWelcome: "欢迎",
@@ -228,6 +237,7 @@ const lang = {
         gptSearchHeadind02: "立即使用GPT的AI驱动推荐增强您的电影选择。",
         search: "搜索",
         gptSearchBarPlaceHolder: "今天您想看什么？",
+        note: "注意：正在查看的內容或資料僅用於教育目的。"
     },
     ko : {
         headerWelcome: "환영합니다",
@@ -251,6 +261,7 @@ const lang = {
         gptSearchHeadind02: "지금 GPT의 AI 기반 추천으로 영화 선택을 강화하세요.",
         search: "검색",
         gptSearchBarPlaceHolder: "오늘 무엇을 보고 싶으신가요?",
+        note: "참고: 현재 보고 있는 콘텐츠나 자료는 교육 목적으로만 제작되었습니다."
     },
     ar : {
         headerWelcome: "مرحبا",
@@ -274,6 +285,7 @@ const lang = {
         gptSearchHeadind02: "عزز اختيارات أفلامك بتوصيات GPT المدعومة بالذكاء الاصطناعي الآن.",
         search: "بحث",
         gptSearchBarPlaceHolder: "ماذا تريد أن تشاهد اليوم؟",
+        note: "ملحوظة: المحتوى أو المادة التي يتم عرضها مخصصة للأغراض التعليمية فقط."
     },
 }
 

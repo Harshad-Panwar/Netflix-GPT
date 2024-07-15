@@ -10,6 +10,7 @@ import useNowPlayingMovies from "../customHooks/useNowPlayingMovies";
 import usePopularMovies from "../customHooks/usePopularMovies";
 import useTopRatedMovies from "../customHooks/useTopRatedMovies";
 import useUpcomingMovies from "../customHooks/useUpcomigMovies";
+import Footer from "./Footer";
 
 const Browse = () => {
   // Fetch movie data using custom hooks
@@ -50,6 +51,7 @@ const Browse = () => {
           )}
         </>
       )}
+      <Footer />
     </div>
   );
 };
